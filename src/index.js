@@ -1,16 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import Display from "./Components/Display";
 import "./styles.css";
+import { Provider } from "react-redux";
+import Store from "./Store/Store";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <Display />
     </div>
   );
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(
+  <Provider store={Store}>
+    <App />
+  </Provider>,
+  rootElement
+);
